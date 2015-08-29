@@ -1,0 +1,10 @@
+com\hand\film\FilmDao.class
+com\hand\film\FilmMapper.class
+com\hand\Event\CStopEventHandler.class
+com\hand\Event\CStartEventHandler.class
+com\hand\th_Exam\App.class
+com\hand\film\FilmEntity.class
+com\hand\film\IdEntity.class
+com\hand\film\FilmJDBCTemplate.class
+com\hand\AOP\Logging.class
+com\hand\Main\Main.class
