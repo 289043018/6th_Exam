@@ -11,14 +11,17 @@
    	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     
 	<context:component-scan base-package="com.hand.Event" /> 
-
+	<bean id="propertyConfigurer"     
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">      
+    <property name="location" value="classpath:dbconfig.properties"/>      
+	</bean>
    <!-- Initialization for data source -->
    <bean id="datasource" 
       class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-      <property name="url" value="jdbc:mysql://localhost:3306/sakila"/>
-      <property name="username" value="root"/>
-      <property name="password" value="root"/>
+      <property name="driverClassName" value="${driver}"/>
+      <property name="url" value="${dburl}"/>
+      <property name="username" value="${user}"/>
+      <property name="password" value="${password}"/>
    </bean>
    
    <!-- Initialization for TransactionManager -->
@@ -26,6 +29,12 @@
       class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
       <property name="dataSource"  ref="datasource" />    
    </bean>
+   
+   
+   
+   
+   
+   
     
    <!-- <bean id="cStartEventHandler" class="com.hand.Event.CStartEventHandler" />
 	<bean id="cStopEventHandler" class="com.hand.Event.CStopEventHandler" />  -->
